@@ -1,38 +1,188 @@
+/* color palette: #ffc1b6, #ffdcb8, #ffeebb, #ffffff */
 .App {
+  font-family: sans-serif;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+  background-image: linear-gradient(
+    to bottom,
+    #ffc1b6,
+    #ffdcb8,
+    #ffeebb,
+    #ffeebb,
+    #ffffff
+  );
+  background-repeat: no-repeat;
+  font-family: "Crimson Text", serif;
+  color: #444;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+h1,
+h2,
+h3,
+h4 {
+  font-weight: 700;
+  text-align: left;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+h1.card-title {
+  margin: 20px 0 5px 0;
+  line-height: 1;
+}
+
+h1#funWeatherDescription {
+  margin: 30px 0 5px 0; /*margin: 70px 0 5px 0;*/
+  line-height: 1;
+}
+
+h4 {
+  margin: 5px 0 5px 0;
+  line-height: 1;
+}
+
+h5,
+h6,
+input {
+  font-weight: 400;
+  font-size: medium;
+}
+
+input {
+  max-width: 400px;
+}
+
+input[type="search"] {
+  border: 1px solid #444;
+  background: none;
+  color: #444;
+}
+
+a,
+a:hover {
+  color: #444;
+}
+
+a.active {
+  color: #444;
+  cursor: default;
+  text-decoration: none;
+}
+
+a.active:hover {
+  color: #ffc1b6;
+  text-decoration: none;
+}
+
+/* WeatherApp Container */
+.WeatherApp {
+  display: block;
+  margin: 10px auto 10px;
+  max-width: 600px;
+  border: 1px solid #444;
+  border-radius: 5px;
+}
+
+.AppContainer {
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.btn {
+  background-color: transparent;
+  border-radius: 5px;
+  border: 1px solid #444;
+}
+
+.btn:hover {
+  background-color: #ffffff;
+}
+
+.GeoTagButton {
+  border: none;
+  border-radius: 5px;
+  background: none;
+}
+
+.GeoTagButton:hover {
+  background-color: #ffeebb;
+}
+
+/* mainImage cropped */
+
+.MainImage {
+  position: absolute;
+  width: 600px; /* width of container */
+  height: 600px; /* height of container */
+  object-fit: cover;
+  /*object-position: 10px -70px;*/
+  z-index: -1;
+}
+
+.MainRow {
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  justify-content: flex-end;
+}
+
+.card {
+  background: none;
+  border: none;
+}
+
+.card-body {
+  padding: 16px 0 20px 0;
+  line-height: 1;
+  text-align: left;
+  width: 250px;
+}
+
+.icon {
+  position: relative;
+  width: 55px; /* width of container */
+  height: 70px; /* height of container */
+  object-fit: cover;
+  object-position: -7px -5px;
+}
+
+.units {
+  position: relative;
+  top: -13px;
+  font-size: 12px;
+}
+
+#description {
+  /* card body description */
+  text-transform: capitalize;
+}
+
+footer.footer {
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  font-size: 12px;
 }
 
-.App-link {
-  color: #61dafb;
+/*
+.col-sm-2 {
+  font-size: small;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+
+
+.footer p {
+  font-size: 12px;
 }
+
+.daysOfWeek {
+  text-align: center;
+  font-size: medium;
+  white-space: nowrap;
+}
+
+.fa-sun,
+.fa-cloud-sun,
+.fa-rainbow,
+.fa-moon {
+  color: #444;
+  font-size: 38px;
+}
+*/
