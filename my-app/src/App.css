@@ -1,7 +1,7 @@
 /* color palette: #ffc1b6, #ffdcb8, #ffeebb, #ffffff */
 .App {
   font-family: sans-serif;
-  text-align: center;
+  box-sizing: border-box;
 }
 
 body {
@@ -20,8 +20,7 @@ body {
 
 h1,
 h2,
-h3,
-h4 {
+h3 {
   font-weight: 700;
   text-align: left;
 }
@@ -37,8 +36,9 @@ h1#funWeatherDescription {
 }
 
 h4 {
-  margin: 5px 0 5px 0;
+  margin: 15px 0 5px 0;
   line-height: 1;
+  font-size: 20px;
 }
 
 h5,
@@ -49,13 +49,20 @@ input {
 }
 
 input {
-  max-width: 400px;
+  display: inline;
+  width: 60%;
 }
 
 input[type="search"] {
   border: 1px solid #444;
+  border-radius: 5px;
   background: none;
   color: #444;
+  padding: 5px 0 5px 10px;
+}
+
+input[type="search"]:hover {
+  background: #ffeebb;
 }
 
 a,
@@ -92,16 +99,18 @@ a.active:hover {
   background-color: transparent;
   border-radius: 5px;
   border: 1px solid #444;
+  padding: 2px 11px 4px 5px;
 }
 
 .btn:hover {
-  background-color: #ffffff;
+  background-color: #ffeebb;
 }
 
 .GeoTagButton {
   border: none;
   border-radius: 5px;
   background: none;
+  padding: 2px 10px 4px 5px;
 }
 
 .GeoTagButton:hover {
@@ -110,12 +119,12 @@ a.active:hover {
 
 /* mainImage cropped */
 
-.MainImage {
+img {
   position: absolute;
   width: 600px; /* width of container */
   height: 600px; /* height of container */
   object-fit: cover;
-  /*object-position: 10px -70px;*/
+  object-position: 10px -70px;
   z-index: -1;
 }
 
