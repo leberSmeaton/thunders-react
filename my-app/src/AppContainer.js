@@ -1,12 +1,10 @@
 import React from "react";
 import Search from "./Search";
 import MainRow from "./MainRow";
-import FunDescription from "./FunDescription";
 
 export default function AppContainer() {
   return (
-    <div>
-      <div className="AppContainer">
+    <div className="AppContainer">
       {/*Search Row*/}
       <Search />
 
@@ -14,8 +12,9 @@ export default function AppContainer() {
       <MainRow />
 
       {/*Fun Description Row*/}
-      <FunDescription />
-      </div>
+      <h1 class="funWeatherDescription">
+        Very hot! Afternoon cool change. Drink more water.
+      </h1>
     </div>
   );
 }

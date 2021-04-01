@@ -1,6 +1,6 @@
 import React from "react";
-import AppContainer from "./AppContainer";
 import BeachImage from "./BeachImage.svg"; // relative path to image
+import AppContainer from "./AppContainer";
 
 export default function WeatherApp() {
   return (
