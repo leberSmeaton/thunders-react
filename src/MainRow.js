@@ -20,13 +20,13 @@ export default function MainRow() {
                 38{" "}
               </span>
               <span className="units">
-                <a id="celcius-link" className="active">
+                <button id="celcius-link" className="active">
                   °C
-                </a>{" "}
+                </button>{" "}
                 |
-                <a id="fahrenheit-link">
+                <button id="fahrenheit-link">
                   °F
-                </a>
+                </button>
               </span>
             </h1>
 

@@ -6,7 +6,7 @@ export default function WeatherApp() {
   return (
     <div className="WeatherApp">
       {/*mainImage cropped in CSS*/}
-      <div className="MainImage">
+      <div>
         <img src={BeachImage} className="mainImage" alt={"two people on beach"} />
       </div>
       <AppContainer />

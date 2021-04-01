@@ -66,18 +66,24 @@ input[type="search"]:hover {
   background: #ffeebb;
 }
 
-a,
-a:hover {
+button {
   color: #444;
+  background: transparent;
+  border: none;
 }
 
-a.active {
+button:hover {
+  background: #ffeebb;
+}
+
+button.active {
   color: #444;
   cursor: default;
   text-decoration: none;
+  font-weight: 700;
 }
 
-a.active:hover {
+button.active:hover {
   color: #ffc1b6;
   text-decoration: none;
 }
@@ -119,7 +125,7 @@ a.active:hover {
 
 /* mainImage cropped */
 
-img {
+img.mainImage {
   position: absolute;
   width: 600px; /* width of container */
   height: 600px; /* height of container */

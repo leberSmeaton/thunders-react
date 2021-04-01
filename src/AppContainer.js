@@ -12,7 +12,7 @@ export default function AppContainer() {
       <MainRow />
 
       {/*Fun Description Row*/}
-      <h1 class="funWeatherDescription">
+      <h1 className="funWeatherDescription">
         Very hot! Afternoon cool change. Drink more water.
       </h1>
     </div>
