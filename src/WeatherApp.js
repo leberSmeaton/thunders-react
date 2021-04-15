@@ -4,16 +4,25 @@ import BeachImage from "./BeachImage.svg"; // relative path to image
 import "./Weather.css";
 
 export default function WeatherApp() {
-  const [ready, setReady] = useState(false);
-  const [temperature, setTemperature] = useState(null);
+  const [weatherData, setWeatherData] = useState({ ready: false });
 
   function handleResponse(response) {
     console.log(response.data);
-    setTemperature(response.data.main.temp);
-    setReady(true);
+    setWeatherData({
+      ready: true,
+      temperature: response.data.main.temp,
+      cityName: response.data.name,
+      feelsLike: response.data.main.feels_like,
+      tempMax: response.data.main.temp_max,
+      tempMin: response.data.main.temp_min,
+      tempHumidity: response.data.main.humidity,
+      windSpeed: response.data.wind.speed,
+      description: response.data.weather[0].description,
+      date: "Sunday 04.49pm"
+    })
   }
 
-  if (ready) {
+  if (weatherData.ready) {
     return (
       <div className="WeatherApp">
         <div>
@@ -48,7 +57,7 @@ export default function WeatherApp() {
                 <strong id="currentLocation" className="currentLocation">
                   Melbourne
                 </strong>{" "}
-                | <span id="dateTime">Sunday 4:49pm</span>
+                | <span id="dateTime">{weatherData.date}</span>
               </h4>
             </div>
           </div>
@@ -68,8 +77,7 @@ export default function WeatherApp() {
                       />
                     </span>
                     <span className="temperature" id="temperature">
-                      {" "}
-                      38{" "}
+                      {Math.round(weatherData.temperature)}
                     </span>
                     <span className="units">
                       <button id="celcius-link" className="active">
@@ -83,19 +91,19 @@ export default function WeatherApp() {
                   </h1>
 
                   <p className="card-text">
-                    Feels like <strong id="feelsLike">32</strong>°
+                    Feels like <strong id="feelsLike">{Math.round(weatherData.feelsLike)}</strong>°
                     <br />
                     <br />
-                    <strong id="tempMax">41</strong>° Max |{" "}
-                    <span id="tempMin">17</span>
+                    <strong id="tempMax">{weatherData.tempMax}</strong>° Max |{" "}
+                    <span id="tempMin">{weatherData.tempMin}</span>
                     ° Overnight Min
                     <br />
                     <br />
-                    <strong id="windSpeed">20</strong>km/h Wind
+                    <strong id="windSpeed">{Math.round(weatherData.windSpeed)}</strong>km/h Wind
                     <br />
-                    <strong id="tempHumidity">95</strong>% Humidity
+                    <strong id="tempHumidity">{weatherData.tempHumidity}</strong>% Humidity
                     <br />
-                    <strong id="description">Sunny</strong>
+                    <strong id="description">{weatherData.description}</strong>
                   </p>
                 </div>
               </div>
