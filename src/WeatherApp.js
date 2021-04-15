@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
+import FormattedDate from "./FormattedDate";
 import BeachImage from "./BeachImage.svg"; // relative path to image
 import "./Weather.css";
 
@@ -18,7 +19,7 @@ export default function WeatherApp() {
       tempHumidity: response.data.main.humidity,
       windSpeed: response.data.wind.speed,
       description: response.data.weather[0].description,
-      date: "Sunday 04.49pm"
+      date: new Date(response.data.dt * 1000)
     })
   }
 
@@ -57,7 +58,7 @@ export default function WeatherApp() {
                 <strong id="currentLocation" className="currentLocation">
                   Melbourne
                 </strong>{" "}
-                | <span id="dateTime">{weatherData.date}</span>
+                | <span id="dateTime"><FormattedDate date={weatherData.date} /> </span>
               </h4>
             </div>
           </div>
