@@ -176,6 +176,11 @@ footer.footer {
   font-size: 12px;
 }
 
+.footer:hover {
+  color: #444;
+  background-color: #ffc1b6;
+}
+
 /*
 .col-sm-2 {
   font-size: small;
