@@ -19,6 +19,13 @@ h4 {
   margin: 15px 0 5px 0;
   line-height: 1;
   font-size: 20px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.spaceDateTime {
+  margin: 0 10px;
 }
 
 h5,
