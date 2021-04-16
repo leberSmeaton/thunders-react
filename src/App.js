@@ -4,7 +4,7 @@ import WeatherApp from "./WeatherApp";
 function App() {
   return (
     <div className="App">
-      <WeatherApp defaultCity="New York" />
+      <WeatherApp defaultCity="Reservoir" />
       <footer>
         <p>
           <a  className="footer" href="https://github.com/leberSmeaton/thunders-react" target="blank">
