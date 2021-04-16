@@ -2,15 +2,14 @@ import React from "react";
 import FormattedDate from "./FormattedDate";
 import WeatherIcon from "./WeatherIcon";
 import WeatherTemperature from "./WeatherTemperature";
+import GeoLocation from "./GeoLocation";
 
 export default function WeatherInfo(props){
   return (
     <div className="WeatherInfo">
       <div>
         <h4>
-          <button className="GeoTagButton" type="submit">
-          <span roll="img">📍</span>
-          </button>
+          <GeoLocation />
           <span>
             {props.data.city}
           </span>

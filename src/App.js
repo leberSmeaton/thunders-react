@@ -16,9 +16,6 @@ function App() {
           </a> | Hosted by <a  className="footer"
             href="https://thirsty-bell-09c7e4.netlify.app" target="blank">
             Netlify
-          </a> | <a  className="footer"
-            href="mailto:leber.smeaton@yahoo.com" target="blank">
-              Contact + Feedback 
           </a>
         </p>
       </footer>

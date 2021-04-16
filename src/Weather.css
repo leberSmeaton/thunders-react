@@ -11,7 +11,7 @@ h1.card-title {
 }
 
 h1.funWeatherDescription {
-  margin: 60px 0 0 0;
+  margin: 100px 0 0 0;
   line-height: 1;
 }
 
@@ -52,26 +52,17 @@ input[type="search"]:hover {
   background: #ffeebb;
 }
 
-button {
+a {
   color: #444;
   background: transparent;
   border: none;
-}
-
-button:hover {
-  background: #ffeebb;
-}
-
-button.active {
-  color: #444;
-  cursor: default;
   text-decoration: none;
-  font-weight: 700;
 }
 
-button.active:hover {
-  color: #ffc1b6;
-  text-decoration: none;
+a:hover {
+  background: #ffc1b6;
+  border-radius: 2px;
+  padding: 2px 0;
 }
 
 /* WeatherApp Container */
@@ -173,7 +164,7 @@ footer {
   font-size: 12px;
 }
 
-.footer:hover {
+/* .footer:hover {
   background-color: #ffc1b6;
   border-radius: 2px;
 }
@@ -181,7 +172,7 @@ footer {
 .footer:link,
 .footer:visited {
   color: #444;
-}
+} */
 
 /*
 .daysOfWeek {
