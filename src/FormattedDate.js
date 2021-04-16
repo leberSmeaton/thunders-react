@@ -1,7 +1,7 @@
 import React from "react";
 
 export default function FormattedDate(todaysDate) {
-  console.log(todaysDate.date);
+  // console.log(todaysDate.date);
   let days = [
     "Sunday",
     "Monday",
@@ -22,9 +22,6 @@ export default function FormattedDate(todaysDate) {
   }
 
   let currentTime = `${currentHour}:${currentMinute}`;
-
-  let dateTime = document.querySelector("#dateTime");
-  dateTime = `${currentDay} ${currentTime}`;
 
   let formattedDate = `${currentDay} ${currentTime}`;
 

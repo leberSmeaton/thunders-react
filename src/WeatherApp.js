@@ -20,7 +20,8 @@ export default function WeatherApp(props) {
       tempHumidity: response.data.main.humidity,
       windSpeed: response.data.wind.speed,
       description: response.data.weather[0].description,
-      date: new Date(response.data.dt * 1000)
+      date: new Date(response.data.dt * 1000),
+      icon: response.data.weather[0].icon
     })
   }
 
@@ -49,22 +50,21 @@ export default function WeatherApp(props) {
         
         <div className="AppContainer">
           <div className="Search">
-            <div className="SearchForm">
-              <form onSubmit={handleSubmit}>
-                <input
-                  type="search"
-                  className="form-control"
-                  placeholder="Search new city"
-                  onChange={handleCityChange}
-                />
-                <button
-                  className="btn"
-                  type="submit"
-                  value="Search">
-                  🔍
-                </button>
-              </form>
-            </div>
+            <form onSubmit={handleSubmit}>
+              <input
+                type="search"
+                label="Search new city"
+                className="form-control"
+                placeholder="Search new city"
+                onChange={handleCityChange}
+              />
+              <button
+                className="btn"
+                type="submit"
+                value="Search">
+                🔍
+              </button>
+            </form>
           </div>
 
           <WeatherInfo data={weatherData} />
