@@ -1,4 +1,4 @@
-import react from "react";
+import React from "react";
 
 export default function FormattedDate(todaysDate) {
   console.log(todaysDate.date);
