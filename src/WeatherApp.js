@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import WeatherInfo from "./WeatherInfo";
 import BeachImage from "./BeachImage.svg"; // relative path to image
+import WeatherForecast from "./WeatherForecast";
 import "./Weather.css";
 
 export default function WeatherApp(props) {
@@ -73,6 +74,8 @@ export default function WeatherApp(props) {
           <h1 className="funWeatherDescription">
             Very hot! Afternoon cool change. Drink more water.
           </h1>
+
+          <WeatherForecast />
         </div>
       </div>
     );
