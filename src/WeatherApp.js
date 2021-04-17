@@ -13,6 +13,7 @@ export default function WeatherApp(props) {
     // console.log(response.data);
     setWeatherData({
       ready: true,
+      coordinates: response.data.coord,
       temperature: response.data.main.temp,
       city: response.data.name,
       feelsLike: response.data.main.feels_like,
@@ -75,7 +76,7 @@ export default function WeatherApp(props) {
             Very hot! Afternoon cool change. Drink more water.
           </h1>
 
-          <WeatherForecast />
+          <WeatherForecast coordinates={weatherData.coordinates} />
         </div>
       </div>
     );
