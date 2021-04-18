@@ -43,6 +43,21 @@ export default function WeatherApp(props) {
     setCity(event.target.value);
   }
 
+  function searchGeolocation(props) {
+    let latitude = props.coordinates.lat;
+    let longitude = props.coordinates.lon;
+    let units = "metric";
+    let apiKey = "31856a05b9b062fb137620991f56055f";
+    let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=${units}`;
+
+    axios.get(apiUrl).then(handleResponse);
+  }
+  
+  function getCurrentPosition(event) {
+    event.preventDefault();
+    navigator.geolocation.getCurrentPosition(searchGeolocation);
+  }
+
   if (weatherData.ready) {
     return (
       <div className="WeatherApp">
@@ -69,7 +84,7 @@ export default function WeatherApp(props) {
             </form>
           </div>
 
-          <WeatherInfo data={weatherData} />
+          <WeatherInfo data={weatherData} getCurrentPosition={getCurrentPosition} />
 
           {/*Fun Description Row*/}
           <h1 className="funWeatherDescription">
