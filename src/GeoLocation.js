@@ -1,8 +1,8 @@
 import React from "react";
 
-export default function GeoLocation(){
+export default function GeoLocation(props){
   return (
-    <button className="GeoTagButton" type="submit" onClick={props.getCurrentPosition}>
+    <button className="GeoLocation GeoTagButton" type="submit" onClick={props.getCurrentPosition}>
       <span roll="img">📍</span>
     </button>
   );

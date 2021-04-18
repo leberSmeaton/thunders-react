@@ -53,8 +53,8 @@ export default function WeatherApp(props) {
     axios.get(apiUrl).then(handleResponse);
   }
   
-  function getCurrentPosition(event) {
-    event.preventDefault();
+  function getCurrentPosition() {
+    // event.preventDefault();
     navigator.geolocation.getCurrentPosition(searchGeolocation);
   }
 
