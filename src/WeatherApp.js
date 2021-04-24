@@ -44,8 +44,9 @@ export default function WeatherApp(props) {
   }
 
   function searchGeolocation(props) {
-    let latitude = props.coordinates.lat;
-    let longitude = props.coordinates.lon;
+    console.log(props.coords);
+    let latitude = props.coords.latitude;
+    let longitude = props.coords.longitude;
     let units = "metric";
     let apiKey = "31856a05b9b062fb137620991f56055f";
     let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=${units}`;
