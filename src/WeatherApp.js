@@ -49,7 +49,7 @@ export default function WeatherApp(props) {
     let longitude = props.coords.longitude;
     let units = "metric";
     let apiKey = "31856a05b9b062fb137620991f56055f";
-    let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=${units}`;
+    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=${units}`;
 
     axios.get(apiUrl).then(handleResponse);
   }
