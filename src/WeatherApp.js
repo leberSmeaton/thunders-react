@@ -10,11 +10,11 @@ export default function WeatherApp(props) {
   const [city, setCity] = useState(props.defaultCity);
 
   function handleResponse(response) {
-    // console.log(response.data);
+    console.log(response.data);
     setWeatherData({
       ready: true,
-      coordinates: response.data.coord,
       temperature: response.data.main.temp,
+      coordinates: response.data.coord,
       city: response.data.name,
       feelsLike: response.data.main.feels_like,
       tempMax: response.data.main.temp_max,
@@ -43,6 +43,22 @@ export default function WeatherApp(props) {
     setCity(event.target.value);
   }
 
+  function searchGeolocation(props) {
+    console.log(props.coords);
+    let latitude = props.coords.latitude;
+    let longitude = props.coords.longitude;
+    let units = "metric";
+    let apiKey = "31856a05b9b062fb137620991f56055f";
+    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=${units}`;
+
+    axios.get(apiUrl).then(handleResponse);
+  }
+  
+  function getCurrentPosition(event) {
+    event.preventDefault();
+    navigator.geolocation.getCurrentPosition(searchGeolocation);
+  }
+
   if (weatherData.ready) {
     return (
       <div className="WeatherApp">
@@ -69,7 +85,7 @@ export default function WeatherApp(props) {
             </form>
           </div>
 
-          <WeatherInfo data={weatherData} />
+          <WeatherInfo data={weatherData} getCurrentPosition={getCurrentPosition} />
 
           {/*Fun Description Row*/}
           <h1 className="funWeatherDescription">

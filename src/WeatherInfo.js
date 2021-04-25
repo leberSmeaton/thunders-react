@@ -9,7 +9,7 @@ export default function WeatherInfo(props){
     <div className="WeatherInfo">
       <div>
         <h4>
-          <GeoLocation />
+          <GeoLocation getCurrentPosition={props.getCurrentPosition} />
           <span>
             {props.data.city}
           </span>
